@@ -1,0 +1,63 @@
+/* Custom styles for the Streamlit app */
+
+/* Increase font size for better readability */
+body {
+    font-size: 16px;
+}
+
+/* Style the main title */
+.main .block-container h1 {
+    color: #4A4A4A;
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 1em;
+}
+
+/* Style subheaders */
+.main .block-container h2 {
+    color: #6C6C6C;
+    font-size: 1.8em;
+    font-weight: 600;
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+}
+
+/* Style metrics */
+.stMetric {
+    background-color: #F0F2F6;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style buttons */
+.stButton > button {
+    background-color: #FF4B4B;
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5em 1em;
+    transition: background-color 0.3s ease;
+}
+
+.stButton > button:hover {
+    background-color: #E64141;
+}
+
+/* Style select boxes */
+.stSelectbox > div > div {
+    background-color: #F0F2F6;
+    border-radius: 5px;
+}
+
+/* Style date inputs */
+.stDateInput > div > div > input {
+    background-color: #F0F2F6;
+    border-radius: 5px;
+}
+
+/* Add some spacing between elements */
+.element-container {
+    margin-bottom: 1.5em;
+}

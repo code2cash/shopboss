@@ -1,0 +1,56 @@
+#23 {main}
+  thrown in /home/physiciansgrade/public_html/wp-content/plugins/yotpo-social-reviews-for-woocommerce/wc_yotpo.php on line 253
+[12-Sep-2024 12:21:48 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_id() on null in /home/physiciansgrade/public_html/wp-content/plugins/yotpo-social-reviews-for-woocommerce/wc_yotpo.php:253
+Stack trace:
+#0 /home/physiciansgrade/public_html/wp-content/plugins/yotpo-social-reviews-for-woocommerce/lib/widgets/stars-widget.php(21): wc_yotpo_get_product_data(NULL)
+#1 /home/physiciansgrade/public_html/wp-content/plugins/yotpo-social-reviews-for-woocommerce/wc_yotpo.php(242): generate_v3_star_ratings_widget_code(NULL, 807993)
+#2 /home/physiciansgrade/public_html/wp-content/plugins/yotpo-social-reviews-for-woocommerce/wc_yotpo.php(231): generate_star_ratings_widget_code()
+#3 /home/physiciansgrade/public_html/wp-content/themes/Divi-Child-Theme/functions.php(75): wc_yotpo_show_buttomline()
+#4 /home/physiciansgrade/public_html/wp-includes/shortcodes.php(434): yotpo_bottomline_widget_shortcode(Array, '', 'yotpo_bottomlin...')
+#5 [internal function]: do_shortcode_tag(Array)
+#6 /home/physiciansgrade/public_html/wp-includes/shortcodes.php(273): preg_replace_callback('/\\[(\\[?)(yotpo_...', 'do_shortcode_ta...', '[et_pb_section ...')
+#7 /home/physiciansgrade/public_html/wp-content/plugins/woocommerce/includes/rest-api/Controllers/Version2/class-wc-rest-products-v2-controller.php(701): do_shortcode('[et_pb_section ...')
+#8 /home/physiciansgrade/public_html/wp-content/plugins/woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-products-controller.php(1656): WC_REST_Products_V2_Controller->get_product_data(Object(WC_Product_Simple), 'view', Object(WP_REST_Request))
+#9 /home/physiciansgrade/public_html/wp-content/plugins/woocommerce/includes/rest-api/Controllers/Version2/class-wc-rest-products-v2-controller.php(165): WC_REST_Products_Controller->get_product_data(Object(WC_Product_Simple), 'view', Object(WP_REST_Request))
+#10 /home/physiciansgrade/public_html/wp-content/plugins/woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-crud-controller.php(405): WC_REST_Products_V2_Controller->prepare_object_for_response(Object(WC_Product_Simple), Object(WP_REST_Request))
+#11 /home/physiciansgrade/public_html/wp-includes/rest-api/class-wp-rest-server.php(1230): WC_REST_CRUD_Controller->get_items(Object(WP_REST_Request))
+#12 /home/physiciansgrade/public_html/wp-includes/rest-api/class-wp-rest-server.php(1063): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/wc/v3/products', Array, NULL)
+#13 /home/physiciansgrade/public_html/wp-includes/rest-api/class-wp-rest-server.php(439): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#14 /home/physiciansgrade/public_html/wp-includes/rest-api.php(420): WP_REST_Server->serve_request('/wc/v3/products')
+#15 /home/physiciansgrade/public_html/wp-includes/class-wp-hook.php(324): rest_api_loaded(Object(WP))
+#16 /home/physiciansgrade/public_html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#17 /home/physiciansgrade/public_html/wp-includes/plugin.php(565): WP_Hook->do_action(Array)
+#18 /home/physiciansgrade/public_html/wp-includes/class-wp.php(418): do_action_ref_array('parse_request', Array)
+#19 /home/physiciansgrade/public_html/wp-includes/class-wp.php(813): WP->parse_request('')
+#20 /home/physiciansgrade/public_html/wp-includes/functions.php(1336): WP->main('')
+#21 /home/physiciansgrade/public_html/wp-blog-header.php(16): wp()
+#22 /home/physiciansgrade/public_html/index.php(17): require('/home/physician...')
+#23 {main}
+  thrown in /home/physiciansgrade/public_html/wp-content/plugins/yotpo-social-reviews-for-woocommerce/wc_yotpo.php on line 253
+[12-Sep-2024 12:24:48 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_id() on null in /home/physiciansgrade/public_html/wp-content/plugins/yotpo-social-reviews-for-woocommerce/wc_yotpo.php:253
+Stack trace:
+#0 /home/physiciansgrade/public_html/wp-content/plugins/yotpo-social-reviews-for-woocommerce/lib/widgets/stars-widget.php(21): wc_yotpo_get_product_data(NULL)
+#1 /home/physiciansgrade/public_html/wp-content/plugins/yotpo-social-reviews-for-woocommerce/wc_yotpo.php(242): generate_v3_star_ratings_widget_code(NULL, 807993)
+#2 /home/physiciansgrade/public_html/wp-content/plugins/yotpo-social-reviews-for-woocommerce/wc_yotpo.php(231): generate_star_ratings_widget_code()
+#3 /home/physiciansgrade/public_html/wp-content/themes/Divi-Child-Theme/functions.php(75): wc_yotpo_show_buttomline()
+#4 /home/physiciansgrade/public_html/wp-includes/shortcodes.php(434): yotpo_bottomline_widget_shortcode(Array, '', 'yotpo_bottomlin...')
+#5 [internal function]: do_shortcode_tag(Array)
+#6 /home/physiciansgrade/public_html/wp-includes/shortcodes.php(273): preg_replace_callback('/\\[(\\[?)(yotpo_...', 'do_shortcode_ta...', '[et_pb_section ...')
+#7 /home/physiciansgrade/public_html/wp-content/plugins/woocommerce/includes/rest-api/Controllers/Version2/class-wc-rest-products-v2-controller.php(701): do_shortcode('[et_pb_section ...')
+#8 /home/physiciansgrade/public_html/wp-content/plugins/woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-products-controller.php(1656): WC_REST_Products_V2_Controller->get_product_data(Object(WC_Product_Simple), 'view', Object(WP_REST_Request))
+#9 /home/physiciansgrade/public_html/wp-content/plugins/woocommerce/includes/rest-api/Controllers/Version2/class-wc-rest-products-v2-controller.php(165): WC_REST_Products_Controller->get_product_data(Object(WC_Product_Simple), 'view', Object(WP_REST_Request))
+#10 /home/physiciansgrade/public_html/wp-content/plugins/woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-crud-controller.php(405): WC_REST_Products_V2_Controller->prepare_object_for_response(Object(WC_Product_Simple), Object(WP_REST_Request))
+#11 /home/physiciansgrade/public_html/wp-includes/rest-api/class-wp-rest-server.php(1230): WC_REST_CRUD_Controller->get_items(Object(WP_REST_Request))
+#12 /home/physiciansgrade/public_html/wp-includes/rest-api/class-wp-rest-server.php(1063): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/wc/v3/products', Array, NULL)
+#13 /home/physiciansgrade/public_html/wp-includes/rest-api/class-wp-rest-server.php(439): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#14 /home/physiciansgrade/public_html/wp-includes/rest-api.php(420): WP_REST_Server->serve_request('/wc/v3/products')
+#15 /home/physiciansgrade/public_html/wp-includes/class-wp-hook.php(324): rest_api_loaded(Object(WP))
+#16 /home/physiciansgrade/public_html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#17 /home/physiciansgrade/public_html/wp-includes/plugin.php(565): WP_Hook->do_action(Array)
+#18 /home/physiciansgrade/public_html/wp-includes/class-wp.php(418): do_action_ref_array('parse_request', Array)
+#19 /home/physiciansgrade/public_html/wp-includes/class-wp.php(813): WP->parse_request('')
+#20 /home/physiciansgrade/public_html/wp-includes/functions.php(1336): WP->main('')
+#21 /home/physiciansgrade/public_html/wp-blog-header.php(16): wp()
+#22 /home/physiciansgrade/public_html/index.php(17): require('/home/physician...')
+#23 {main}
+  thrown in /home/physiciansgrade/public_html/wp-content/plugins/yotpo-social-reviews-for-woocommerce/wc_yotpo.php on line 253
