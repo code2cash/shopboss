@@ -1,0 +1,24 @@
+attern='*.py', allow_nonexistent=True, on_changed=<blinker.base.Signal object at 0x711c558aaf10>)}
+2024-09-12 20:45:09.844 Ignoring changed path /home/runner/ShopBossDashboard/.git.
+Watched_paths: {'/home/runner/ShopBossDashboard/pages': WatchedPath(md5='5a440a661480ede18e2c15a18e142a97', glob_pattern='*.py', allow_nonexistent=True, on_changed=<blinker.base.Signal object at 0x711c558aaf10>)}
+2024-09-12 20:45:09.844 Move event: src /home/runner/ShopBossDashboard/.git/config.lock; dest /home/runner/ShopBossDashboard/.git/config
+2024-09-12 20:45:09.844 Ignoring changed path /home/runner/ShopBossDashboard/.git/config.
+Watched_paths: {'/home/runner/ShopBossDashboard/pages': WatchedPath(md5='5a440a661480ede18e2c15a18e142a97', glob_pattern='*.py', allow_nonexistent=True, on_changed=<blinker.base.Signal object at 0x711c558aaf10>)}
+2024-09-12 20:45:09.844 Ignoring changed path /home/runner/ShopBossDashboard/.git.
+Watched_paths: {'/home/runner/ShopBossDashboard/pages': WatchedPath(md5='5a440a661480ede18e2c15a18e142a97', glob_pattern='*.py', allow_nonexistent=True, on_changed=<blinker.base.Signal object at 0x711c558aaf10>)}
+2024-09-12 20:45:11.168 Ignoring changed path /home/runner/ShopBossDashboard/.git/index.lock.
+Watched_paths: {'/home/runner/ShopBossDashboard/pages': WatchedPath(md5='5a440a661480ede18e2c15a18e142a97', glob_pattern='*.py', allow_nonexistent=True, on_changed=<blinker.base.Signal object at 0x711c558aaf10>)}
+2024-09-12 20:45:11.168 Ignoring changed path /home/runner/ShopBossDashboard/.git.
+Watched_paths: {'/home/runner/ShopBossDashboard/pages': WatchedPath(md5='5a440a661480ede18e2c15a18e142a97', glob_pattern='*.py', allow_nonexistent=True, on_changed=<blinker.base.Signal object at 0x711c558aaf10>)}
+2024-09-12 20:45:11.169 Ignoring changed path /home/runner/ShopBossDashboard/.git.
+Watched_paths: {'/home/runner/ShopBossDashboard/pages': WatchedPath(md5='5a440a661480ede18e2c15a18e142a97', glob_pattern='*.py', allow_nonexistent=True, on_changed=<blinker.base.Signal object at 0x711c558aaf10>)}
+2024-09-12 20:45:11.170 Ignoring changed path /home/runner/ShopBossDashboard/.git.
+Watched_paths: {'/home/runner/ShopBossDashboard/pages': WatchedPath(md5='5a440a661480ede18e2c15a18e142a97', glob_pattern='*.py', allow_nonexistent=True, on_changed=<blinker.base.Signal object at 0x711c558aaf10>)}
+2024-09-12 20:45:11.226 Ignoring changed path /home/runner/ShopBossDashboard/.git/index.lock.
+Watched_paths: {'/home/runner/ShopBossDashboard/pages': WatchedPath(md5='5a440a661480ede18e2c15a18e142a97', glob_pattern='*.py', allow_nonexistent=True, on_changed=<blinker.base.Signal object at 0x711c558aaf10>)}
+2024-09-12 20:45:11.226 Ignoring changed path /home/runner/ShopBossDashboard/.git.
+Watched_paths: {'/home/runner/ShopBossDashboard/pages': WatchedPath(md5='5a440a661480ede18e2c15a18e142a97', glob_pattern='*.py', allow_nonexistent=True, on_changed=<blinker.base.Signal object at 0x711c558aaf10>)}
+2024-09-12 20:45:11.227 Ignoring changed path /home/runner/ShopBossDashboard/.git.
+Watched_paths: {'/home/runner/ShopBossDashboard/pages': WatchedPath(md5='5a440a661480ede18e2c15a18e142a97', glob_pattern='*.py', allow_nonexistent=True, on_changed=<blinker.base.Signal object at 0x711c558aaf10>)}
+2024-09-12 20:45:11.227 Ignoring changed path /home/runner/ShopBossDashboard/.git.
+Watched_paths: {'/home/runner/ShopBossDashboard/pages': WatchedPath(md5='5a440a661480ede18e2c15a18e142a97', glob_pattern='*.py', allow_nonexistent=True, on_changed=<blinker.base.Signal object at 0x711c558aaf10>)}

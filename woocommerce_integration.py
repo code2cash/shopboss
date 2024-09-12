@@ -8,11 +8,11 @@ logging.basicConfig(level=logging.INFO)
 
 def connect_store():
     st.subheader("Connect Your WooCommerce Store")
-    wordpress_url = st.text_input("WordPress URL (e.g., https://example.com)")
-    consumer_key = st.text_input("Consumer Key")
-    consumer_secret = st.text_input("Consumer Secret")
+    wordpress_url = st.text_input("WordPress URL (e.g., https://example.com)", key="woo_wordpress_url")
+    consumer_key = st.text_input("Consumer Key", key="woo_consumer_key")
+    consumer_secret = st.text_input("Consumer Secret", key="woo_consumer_secret")
     
-    if st.button("Test Connection"):
+    if st.button("Test Connection", key="woo_test_connection"):
         if wordpress_url and consumer_key and consumer_secret:
             try:
                 wcapi = API(

@@ -1,30 +1,13 @@
 import streamlit as st
-from mailwizz_integration import MailwizzAPI
+from mailwizz_integration import render_mailwizz_section
 from woocommerce_integration import render_woocommerce_insights
 from google_analytics_integration import render_google_analytics_section
+import logging
 
-def render_mailwizz_section():
-    st.title("Mailwizz Integration")
-    
-    api = MailwizzAPI()
-    
-    if st.button("Test Mailwizz Connection"):
-        connection_status, message = api.test_connection()
-        if connection_status:
-            st.success(message)
-        else:
-            st.error(message)
-    
-    if st.button("Get Mailing Lists"):
-        response = api.get_lists()
-        if response.status_code == 200:
-            lists = response.json()['data']['records']
-            for list_info in lists:
-                st.write(f"List Name: {list_info['name']}, Subscribers: {list_info['subscribers_count']}")
-        else:
-            st.error("Failed to retrieve mailing lists")
+logging.basicConfig(level=logging.DEBUG)
 
 def main():
+    logging.debug("Starting the Streamlit application")
     st.sidebar.title("Navigation")
     page = st.sidebar.radio("Go to", ["Home", "WooCommerce Insights", "Mailwizz Integration", "Google Analytics"])
 
