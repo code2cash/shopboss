@@ -10,3 +10,4 @@ mailwizz-python-sdk
 pandas
 plotly
 streamlit
+google-analytics-data
