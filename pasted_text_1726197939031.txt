@@ -4,13 +4,47 @@ import streamlit as st
 import json
 import os
 
-logging.basicConfig(level=logging.DEBUG)
+save_mailwizz_instances()
+load_mailwizz_instances()
 
+logging.basicConfig(level=logging.DEBUG)
 
 class MailwizzAPI:
 
-    def __init__(self, instance_name, api_url, public_key, secret_key,
-                 list_id):
+    def save_mailwizz_instances():
+        instances_data = {name: {'api_url': api.api_url, 'public_key': api.public_key, 'secret_key': api.secret_key, 'list_id': api.list_id}
+        for name, api in st.session_state.mailwizz_instances.items()}
+        with open('mailwizz_instances.json', 'w') as f:
+            json.dump(instances_data, f)
+
+    def load_mailwizz_instances():
+        with open('mailwizz_instances.json', 'r') as f:
+            json.dump(instances_data, f)
+        st.session_state.mailwizz_instances = {name: MailwizzAPI(name, **data) for name, data in instances_data.items()}
+        # eclass MailwizzAPI:
+    @staticmethod
+    def save_mailwizz_instances():
+        instances_data = {name: {'api_url': api.api_url, 'public_key': api.public_key, 'secret_key': api.secret_key, 'list_id': api.list_id}
+                          for name, api in st.session_state.mailwizz_instances.items()}
+        with open('mailwizz_instances.json', 'w') as f:
+            json.dump(instances_data, f)
+
+    @staticmethod
+    def load_mailwizz_instances():
+        try:
+            with open('mailwizz_instances.json', 'r') as f:
+                instances_data = json.load(f)
+            st.session_state.mailwizz_instances = {name: MailwizzAPI(name, **data) for name, data in instances_data.items()}
+        except FileNotFoundError:
+        st.session_state.mailwizz_instances = {}xcept FileNotFoundError:try:
+    with open('mailwizz_instances.json', 'r') as f:
+        instances_data = json.load(f)
+    st.session_state.mailwizz_instances = {name: MailwizzAPI(name, **data) for name, data in instances_data.items()}
+except FileNotFoundError:
+    st.session_state.mailwizz_instances = {}
+        st.session_state.mailwizz_instances = {}
+        
+    def __init__(self, instance_name, api_url, public_key, secret_key, list_id):
         self.instance_name = instance_name
         self.api_url = api_url.rstrip('/').rstrip('/api')
         if not self.api_url.endswith('/api'):
@@ -20,32 +54,6 @@ class MailwizzAPI:
         self.list_id = list_id
         logging.debug(f"Initialized MailwizzAPI instance: {instance_name}")
         logging.debug(f"API URL: {self.api_url}")
-
-    @staticmethod
-    def save_mailwizz_instances():
-        instances_data = {
-            name: {
-                'api_url': api.api_url,
-                'public_key': api.public_key,
-                'secret_key': api.secret_key,
-                'list_id': api.list_id
-            }
-            for name, api in st.session_state.mailwizz_instances.items()
-        }
-        with open('mailwizz_instances.json', 'w') as f:
-            json.dump(instances_data, f)
-
-    @staticmethod
-    def load_mailwizz_instances():
-        try:
-            with open('mailwizz_instances.json', 'r') as f:
-                instances_data = json.load(f)
-            st.session_state.mailwizz_instances = {
-                name: MailwizzAPI(name, **data)
-                for name, data in instances_data.items()
-            }
-        except FileNotFoundError:
-            st.session_state.mailwizz_instances = {}
 
     def test_connection(self):
         try:
@@ -83,18 +91,15 @@ class MailwizzAPI:
             if response.status_code == 200:
                 return response.json()
             else:
-                logging.error(
-                    f"Failed to fetch list data. Status code: {response.status_code}"
-                )
+                logging.error(f"Failed to fetch list data. Status code: {response.status_code}")
                 return None
         except Exception as e:
             logging.exception("Error in get_list_data:")
             return None
 
-
-def render_mailwizz_section():
-    st.title("Mailwizz Integration")
-    MailwizzAPI.load_mailwizz_instances()
+    def render_mailwizz_section():
+        st.title("Mailwizz Integration")
+        load_mailwizz_instances()
 
     # Load existing instances
     if 'mailwizz_instances' not in st.session_state:
@@ -108,22 +113,20 @@ def render_mailwizz_section():
     secret_key = st.text_input("Secret Key")
     list_id = st.text_input("List ID")
 
+     # Conner Update: Add a button to save the instance
     if st.button("Add Instance"):
-        if instance_name and api_url and public_key and secret_key and list_id:
-            new_instance = MailwizzAPI(instance_name, api_url, public_key,
-                                       secret_key, list_id)
-            success, message = new_instance.test_connection()
-            if success:
-                st.session_state.mailwizz_instances[
-                    instance_name] = new_instance
-                MailwizzAPI.save_mailwizz_instances(
-                )  # Save instances after adding
-                st.success(f"Instance '{instance_name}' added successfully!")
-            else:
-                st.error(f"Failed to add instance: {message}")
+    if instance_name and api_url and public_key and secret_key and list_id:
+        new_instance = MailwizzAPI(instance_name, api_url, public_key, secret_key, list_id)
+        success, message = new_instance.test_connection()
+        if success:
+        st.session_state.mailwizz_instances[instance_name] = new_instance
+        save_mailwizz_instances() # Save instances after adding
+        st.success(f"Instance '{instance_name}' added successfully!")
         else:
-            st.warning("Please fill in all fields.")
-
+        st.error(f"Failed to add instance: {message}")
+        else:
+        st.warning("Please fill in all fields.")
+    
     # Display existing instances
     st.subheader("Existing Mailwizz Instances")
     for name, instance in st.session_state.mailwizz_instances.items():
@@ -134,7 +137,6 @@ def render_mailwizz_section():
                 st.json(list_data)
             else:
                 st.error(f"Failed to fetch list data for {name}")
-
 
 if __name__ == "__main__":
     render_mailwizz_section()

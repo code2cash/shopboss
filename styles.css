@@ -61,3 +61,16 @@ body {
 .element-container {
     margin-bottom: 1.5em;
 }
+
+.stApp {
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.stTextInput, .stSelectbox, .stMultiselect {
+    max-width: 300px;
+}
+
+.stButton {
+    max-width: 200px;
+}
